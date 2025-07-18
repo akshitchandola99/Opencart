@@ -25,7 +25,7 @@ import org.testng.annotations.Parameters;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-//This is a base/Parent class for all other classes. Contains Resuable methods. Avoids Code Duplication..
+//This is a base/Parent class for all other classes. Contains Resuable methods. Avoids Code Duplication......
 public class BaseClass {
 	
     public static WebDriver driver;
