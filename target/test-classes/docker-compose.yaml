@@ -1,0 +1,36 @@
+
+services:
+  selenium-hub:
+    image: selenium/hub
+    container_name: selenium-hub
+    ports:
+      - "4444:4444"
+    networks:
+      - grid
+
+  node-chrome:
+    image: selenium/node-chrome
+    container_name: chrome-node
+
+    environment:
+      - SE_EVENT_BUS_HOST=selenium-hub
+      - SE_EVENT_BUS_PUBLISH_PORT=4442
+      - SE_EVENT_BUS_SUBSCRIBE_PORT=4443
+    networks:
+      - grid
+    platform: linux/amd64  # for Apple Silicon (M1/M2)
+
+  firefox:
+    image: selenium/node-firefox
+    container_name: firefox-node
+    environment:
+      - SE_EVENT_BUS_HOST=selenium-hub
+      - SE_EVENT_BUS_PUBLISH_PORT=4442
+      - SE_EVENT_BUS_SUBSCRIBE_PORT=4443
+    networks:
+      - grid
+    platform: linux/amd64  # for Apple Silicon (M1/M2)
+
+networks:
+  grid:
+    driver: bridge
