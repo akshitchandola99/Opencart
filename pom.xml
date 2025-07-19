@@ -32,8 +32,6 @@
       <configuration>
         <suiteXmlFiles>
           <suiteXmlFile>grouping.xml</suiteXmlFile>
-          <suiteXmlFile>masterSuite.xml</suiteXmlFile>
-           <suiteXmlFile>ParallelTesting.xml</suiteXmlFile>
         </suiteXmlFiles>
       </configuration>
     </plugin>
